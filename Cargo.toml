@@ -2,7 +2,22 @@
 name = "doors"
 version = "0.1.0"
 edition = "2021"
+authors = ["Nicholas Stienz <nickstienz@gmail.com>"]
+license = "MIT"
+description = "A bad kernel and OS written in Rust"
+repository = "https://github.com/nickstienz/doors"
+readme = "README.md"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[[bin]]
+name = "app"
+test = false
+bench = false
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
 
 [dependencies]
+bootloader = "0.9.23"
